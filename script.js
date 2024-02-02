@@ -14,7 +14,14 @@ $(document).ready(function(){
             $('.scroll-up-btn').removeClass("show");
         }
     });
+    // preloader
+    window.addEventListener("load", function() {
+    document.querySelector(".preloader").classList.add("opacity-0");
+    setTimeout(function() {
+        document.querySelector(".preloader").style.display = "none";
 
+    }, 1000)
+})
     // slide-up script
     $('.scroll-up-btn').click(function(){
         $('html').animate({scrollTop: 0});
