@@ -80,7 +80,7 @@
                     <div class="text">I'm Nitesh and I'm a <span class="typing-2"></span></div>
                     <p>Hey there! I'm Motivated and aspiring MCA student with passion for creating visually appealing and user-friendly websites. I am dedicated student who has honed my skills in web development and has successfully completed multiple website projects. Currently I am actively expanding my knowledge and expertise in this field through continuous learning. I thrive in collaborative environment where I can contribute my creativity and problem-solving skills to develop innovative solutions with excellent communication.</p>
                     <!-- about Sec-2 -->
-                    <div class="tab-titles">
+<!--                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="opentab('Experience')">Experience</p>
                         <p class="tab-links"onclick="opentab('Education')">Education</p>
                     </div>
@@ -96,11 +96,67 @@
                             <li><span>Ambalika Institute of Management and Technology</span><br>Bachelor of Computer Application <br> 2021-2024</li>
                             <li><span>Lucknow Christian Inter College</span><br>Intermediate <br> 2019-2021</li>
                         </ul>
-                    </div>
-                    <a href="img/Nitesh-Kumar-Mishra-Resume.pdf">Download CV</a>
-                </div>
+                    </div> -->
+
+                     <style>
+    .tab-titles {
+      display: flex;
+      cursor: pointer;
+    }
+    .tab-links {
+      margin-right: 20px;
+      font-weight: bold;
+    }
+    .tab-links.active-link {
+      color: green;
+      border-bottom: 2px solid green;
+    }
+    .tab-contents {
+      display: none;
+    }
+    .tab-contents.active-tab {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<div class="tab-titles">
+    <p class="tab-links active-link" onclick="opentab('Experience')">Experience</p>
+    <p class="tab-links" onclick="opentab('Education')">Education</p>
+  </div>
+
+  <div class="tab-contents active-tab" id="Experience">
+    <ul>
+      <li><span>CodeAlpha</span><br>Web Developer Intern</li>
+      <li><span>Let's Grow More</span><br>Web Developer Intern</li>
+      <li><span>Oasis Infobyte</span><br>Frontend Developer Intern</li> <!-- ✅ New Internship -->
+    </ul>
+  </div>
+
+  <div class="tab-contents" id="Education">
+    <ul>
+      <li><span>MCA - XYZ University</span><br>2024–2026</li>
+      <li><span>BCA - ABC College</span><br>2021–2024</li>
+    </ul>
+  </div>
+    <a href="img/Nitesh-Mishra_Resume.pdf">Download CV</a>
+        </div>
             </div>
         </div>
+
+        <script>
+    let tabLinks = document.querySelectorAll(".tab-links");
+    let tabContents = document.querySelectorAll(".tab-contents");
+
+    function opentab(tabName) {
+      tabLinks.forEach(link => link.classList.remove("active-link"));
+      tabContents.forEach(content => content.classList.remove("active-tab"));
+
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabName).classList.add("active-tab");
+    }
+  </script>
+
     </section>
 
     <!-- services section start -->
