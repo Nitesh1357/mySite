@@ -79,15 +79,27 @@ $(document).ready(function(){
     });
 });
 // about sec-2
-var tablinks = document.getElementsByClassName("tab-links");
-var tabcontents = document.getElementsByClassName("tab-contents");
-function opentab(tabname){
-    for(tablink of tablinks){
-        tablink.classList.remove("active-link");
+// var tablinks = document.getElementsByClassName("tab-links");
+// var tabcontents = document.getElementsByClassName("tab-contents");
+// function opentab(tabname){
+//     for(tablink of tablinks){
+//         tablink.classList.remove("active-link");
+//     }
+//     for(tabcontent of tabcontents){
+//         tabcontent.classList.remove("active-tab");
+//     }
+//     Event.currentTarget.classList.add("active-links");
+//     document.getElementById(tabname).classList.add("active-tab");
+// }
+ 
+    let tabLinks = document.querySelectorAll(".tab-links");
+    let tabContents = document.querySelectorAll(".tab-contents");
+
+    function opentab(tabName) {
+      tabLinks.forEach(link => link.classList.remove("active-link"));
+      tabContents.forEach(content => content.classList.remove("active-tab"));
+
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabName).classList.add("active-tab");
     }
-    for(tabcontent of tabcontents){
-        tabcontent.classList.remove("active-tab");
-    }
-    Event.currentTarget.classList.add("active-links");
-    document.getElementById(tabname).classList.add("active-tab");
-}
+
