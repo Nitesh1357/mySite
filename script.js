@@ -81,16 +81,30 @@ $(document).ready(function(){
 // about sec-2
 var tablinks = document.getElementsByClassName("tab-links");
 var tabcontents = document.getElementsByClassName("tab-contents");
-function opentab(tabname){
-    for(tablink of tablinks){
+
+function opentab(tabname, event) {
+    for (let tablink of tablinks) {
         tablink.classList.remove("active-link");
     }
-    for(tabcontent of tabcontents){
+    for (let tabcontent of tabcontents) {
         tabcontent.classList.remove("active-tab");
     }
-    Event.currentTarget.classList.add("active-links");
+    event.currentTarget.classList.add("active-link");
     document.getElementById(tabname).classList.add("active-tab");
 }
+
+// var tablinks = document.getElementsByClassName("tab-links");
+// var tabcontents = document.getElementsByClassName("tab-contents");
+// function opentab(tabname){
+//     for(tablink of tablinks){
+//         tablink.classList.remove("active-link");
+//     }
+//     for(tabcontent of tabcontents){
+//         tabcontent.classList.remove("active-tab");
+//     }
+//     Event.currentTarget.classList.add("active-links");
+//     document.getElementById(tabname).classList.add("active-tab");
+// }
  
     // let tabLinks = document.querySelectorAll(".tab-links");
     // let tabContents = document.querySelectorAll(".tab-contents");
