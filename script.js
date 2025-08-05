@@ -105,27 +105,36 @@ function opentab(tabname, event){
     document.getElementById(tabname).classList.add("active-tab");
 }
 
-// var tablinks = document.getElementsByClassName("tab-links");
-// var tabcontents = document.getElementsByClassName("tab-contents");
-// function opentab(tabname){
-//     for(tablink of tablinks){
-//         tablink.classList.remove("active-link");
-//     }
-//     for(tabcontent of tabcontents){
-//         tabcontent.classList.remove("active-tab");
-//     }
-//     Event.currentTarget.classList.add("active-links");
-//     document.getElementById(tabname).classList.add("active-tab");
-// }
- 
-    // let tabLinks = document.querySelectorAll(".tab-links");
-    // let tabContents = document.querySelectorAll(".tab-contents");
 
-    // function opentab(tabName) {
-    //   tabLinks.forEach(link => link.classList.remove("active-link"));
-    //   tabContents.forEach(content => content.classList.remove("active-tab"));
+// skills section
+function animateSkills() {
+  document.querySelectorAll(".skill").forEach(skill => {
+    const percent = skill.getAttribute("data-percent");
+    const circle = skill.querySelector("svg circle");
 
-    //   event.currentTarget.classList.add("active-link");
-    //   document.getElementById(tabName).classList.add("active-tab");
-    // }
+    // Remove previous progress if exists
+    const existing = skill.querySelector("circle.progress");
+    if (existing) existing.remove();
+
+    // Create new animated circle
+    const newCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    newCircle.setAttribute("cx", 60);
+    newCircle.setAttribute("cy", 60);
+    newCircle.setAttribute("r", 50);
+    newCircle.setAttribute("class", "progress");
+
+    const offset = 314 - (314 * percent) / 100;
+    newCircle.style.setProperty('--offset', offset);
+
+    circle.parentNode.appendChild(newCircle);
+  });
+}
+
+// Initial animation
+animateSkills();
+
+// Repeat every 5 seconds
+setInterval(animateSkills, 5000);
+
+
 
