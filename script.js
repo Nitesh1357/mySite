@@ -138,3 +138,4 @@ setInterval(animateSkills, 5000);
 
 
 
+
